@@ -1,0 +1,4 @@
+.scrollable-container {
+    touch-action: pan-x; /* Habilita el deslizamiento táctil vertical en dispositivos móviles */
+}
+

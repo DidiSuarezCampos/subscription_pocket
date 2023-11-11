@@ -1,0 +1,59 @@
+.card-container {
+    margin-top: 20%;
+    display: flex; /* Utiliza flexbox para mostrar las tarjetas en línea */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente fila si no caben en el ancho del contenedor */
+    justify-content: space-between; /* Espacio entre las tarjetas */
+  }
+  
+.card {
+    width: 200px; 
+    margin: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    color: black;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 300px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+  
+  /* Otros estilos que ya tenías */
+  
+  .card-img-top {
+    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: 200px; /* Establece la altura fija deseada */
+    object-fit: cover; /* Ajusta la imagen para que se ajuste al tamaño especificado */
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.8);
+  }
+
+  @media (max-width: 767px) {
+    .card-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column; /* Cambia la dirección de la flexbox para apilar las tarjetas verticalmente */
+      align-items: center; /* Centra las tarjetas horizontalmente */
+      text-align: center;
+    }
+
+    .card {
+        width: 90%; /* Ancho del 90% del contenedor en pantalla pequeña */
+      }
+    }
+    
+
+  
+  
+  

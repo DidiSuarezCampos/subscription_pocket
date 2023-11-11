@@ -1,0 +1,62 @@
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+    transition: all 0.7s linear;
+  }
+  
+  .card-body {
+    padding: 2rem 0 !important;
+    
+  }
+  
+  .card-text {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .overflow {
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: 200px; /* Establece la altura fija deseada */
+    object-fit: cover; /* Ajusta la imagen para que se ajuste al tamaño especificado */
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.8);
+  }
+
+.card {
+    width: 200px; 
+    margin: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    color: black;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 300px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.custom-modal-content{
+  z-index: 9999; 
+  position: relative; 
+}
+
+.custom-overlay {
+  
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998; 
+}
+

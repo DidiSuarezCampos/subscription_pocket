@@ -1,0 +1,13 @@
+.bottom-container{
+    display: flex;
+    justify-content: flex-end
+}
+
+.custom-overlay {
+    background: rgba(45, 20, 44, 1);     
+}
+
+.custom-modal-content {
+    background: transparent; 
+    
+}

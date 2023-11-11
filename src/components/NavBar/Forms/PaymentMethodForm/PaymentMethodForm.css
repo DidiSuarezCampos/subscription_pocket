@@ -1,0 +1,31 @@
+.payment-method-title {
+    margin: 0; /* Asegura que no haya margen superior en el título */
+    padding: 0.5rem 0; /* Agrega un poco de espacio arriba y abajo del título */
+    border-left: 5px solid rgba(0, 0, 0, 0.2); /* Agrega una línea divisoria izquierda */
+    padding-left: 10px; /* Espacio entre el texto y la línea divisoria */
+}
+  
+.divider {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.2); /* Línea divisoria opaca */
+    margin-top: 10px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.payment-method-select{
+    margin-left: 50px ;
+}
+
+.submit-button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px; /* Aumenta el espacio interno del botón */
+    position: fixed;
+    bottom: 30px; /* Aumenta la distancia desde la parte inferior */
+    left: 30%;
+    font-size: 20px;
+}
+
+.input{
+    color:black
+}
