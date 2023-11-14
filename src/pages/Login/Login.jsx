@@ -32,6 +32,15 @@ export const Login = (props) => {
             "X-Killbill-CreatedBy": "subscription", 
         };
 
+        const headers1 = {
+            "Authorization": "Basic YWRtaW46cGFzc3dvcmQ=",
+            "Content-Type": "application/json",
+            "X-Killbill-ApiKey": "tesisdomicilio",
+            "X-Killbill-ApiSecret": "tesisdomicilio",
+            "X-Killbill-CreatedBy": "subscription", 
+        };
+        
+
         const url = `http://localhost:8080/1.0/kb/accounts?${requestString}`;
 
         try {
@@ -40,16 +49,21 @@ export const Login = (props) => {
                 headers: headers,
                 //body: JSON.stringify(requestData),
             });
+
+            const response1 = await fetch(url, {
+                method: "GET",
+                headers: headers1,
+                //body: JSON.stringify(requestData),
+            });
   
-            if (response.ok) {
+            if (response.ok && response1.ok) {
                 console.log("Account loaded successfully");
                 const responseData = await response.json();
-                console.log("Account:", responseData);
-                console.log('Acount Mail:', responseData.email)
-
-                console.log('localStorage', responseData.accountId, responseData.externalKey);
-
-                localStorage.setItem('userID', responseData.accountId);
+                const responseData1 = await response1.json()
+                console.log("Account:", responseData, responseData1);
+                
+                localStorage.setItem('userNautaID', responseData.accountId);
+                localStorage. setItem('userDomicilioID', responseData1.accountId)
                 localStorage.setItem('userPass', responseData.externalKey)
 
                 if (email === responseData.email){

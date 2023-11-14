@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 function generateUUID() {
@@ -6,6 +7,9 @@ function generateUUID() {
   }
 
 export const Register = (props) => {
+
+    const history = useHistory();
+
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
@@ -46,6 +50,14 @@ export const Register = (props) => {
             "X-Killbill-ApiSecret": "tesisreact",
             "X-Killbill-CreatedBy": "subscription"
         };
+
+        const headers1 = {
+            "Authorization": "Basic YWRtaW46cGFzc3dvcmQ=",
+            "Content-Type": "application/json",
+            "X-Killbill-ApiKey": "tesisdomicilio",
+            "X-Killbill-ApiSecret": "tesisdomicilio",
+            "X-Killbill-CreatedBy": "subscription"
+        };
   
         try {
            /* const responseEmail = await fetch(url, {
@@ -60,8 +72,14 @@ export const Register = (props) => {
                 headers: headers,
                 body: JSON.stringify(requestData),
                 });
-                if (response.status === 201) {
+                const resposne1 = await fetch("http://localhost:8080/1.0/kb/accounts", {
+                    method: "POST",
+                    headers: headers1,
+                    body: JSON.stringify(requestData),
+                });
+                if (response.status === 201 && resposne1.status === 201) {
                     console.log("Account created successfully", response.body);
+                    history.pushState('/home');
                 } else {
                     console.error("Failed to create an account.");
                 }

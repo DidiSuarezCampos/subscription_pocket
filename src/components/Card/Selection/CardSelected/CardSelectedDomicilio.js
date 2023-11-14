@@ -23,7 +23,7 @@ function CardSelectedDomicilio({name,price,index,data,datacomp}){
 
         const bundleId = generateUUID();
         const subscriptionId = generateUUID();
-        const id = localStorage.getItem('userID');
+        const id = localStorage.getItem('userDomicilioID');
 
         // Obtener la fecha 
         const fecha = new Date();
@@ -40,10 +40,10 @@ function CardSelectedDomicilio({name,price,index,data,datacomp}){
             console.log('ProductType', typevalue);
 
             const billing = data[index].plans[0].billingPeriod;
-            console.log (billing);
+            console.log ('billingCategory',billing);
 
             const plan = data[index].plans[0].name;
-            console.log(plan);
+            console.log('planName',plan);
 
             let chargeThroughDate = new Date();
             chargeThroughDate.setMonth(fecha.getMonth() + 1);
@@ -65,45 +65,7 @@ function CardSelectedDomicilio({name,price,index,data,datacomp}){
              //Datos de la solicitud
             const requestData = {
                 accountId: id,
-                bundleId: bundleId,
-                externalKey: bundleId,
-                subscription: [
-                    {
-                        accountId: id,
-                        bundleId: bundleId,
-                        bundleExternalKey: bundleId,
-                        subscriptionId: subscriptionId,
-                        externalKey: subscriptionId,
-                        startDate: fechaFormateada,
-                        productName: name,
-                        productCategory: typevalue,
-                        billingPeriod: billing,
-                        phaseType: "EVERGREEN",
-                        priceList: typevalue,
-                        planName: plan,
-                        state: "ACTIVE",
-                        sourceType: "NATIVE",
-                        chargeThroughDate: chargeThroughDate,
-                        billlingStartDate: fechaFormateada,                    
-                        billingCycleDayLocal: 10,
-                        quantity: 1,
-                        events:[
-                            {
-                                eventId: eventId,
-                                billingPeriod: billing,
-                                effectiveDate: fechaFormateada,
-                                catalogEffectiveDate: effectDate,
-                                plan: plan,
-                                product: name,
-                                priceList: typevalue,
-                                eventType: "START_ENTITLEMENT",
-                                serviceName: "entitlement-service",
-                                serviceStateName: "ENT_STARTED",
-                                phase: namemod,
-                            }                        
-                        ]
-                    }
-                ]
+                planName: plan,    
             }
 
             console.log('requestData',requestData)
@@ -113,21 +75,21 @@ function CardSelectedDomicilio({name,price,index,data,datacomp}){
             const headers = {
                 "Authorization": "Basic YWRtaW46cGFzc3dvcmQ=",
                 "Content-Type": "application/json",
-                "X-Killbill-ApiKey": "tesisreact",
-                "X-Killbill-ApiSecret": "tesisreact",
+                "X-Killbill-ApiKey": "tesisdomicilio",
+                "X-Killbill-ApiSecret": "tesisdomicilio",
                 "X-Killbill-CreatedBy": "subscription"
             };
 
             try{
-                const response = await fetch("http://localhost:8080/1.0/kb/subscription", {
+                const response = await fetch("http://localhost:8080/1.0/kb/subscriptions", {
                 method: "POST",
                 headers: headers,
                 body: jsonData,
                 });
                 if (response.status === 201) {
-                    console.log("Account created successfully", response.body);
+                    console.log("Subscripion created successfully", response.body);
                 } else {
-                    console.error("Failed to create an account.");
+                    console.error("Failed to create an subscription.");
                 }
             }catch (error){
                 console.error("An error ocurred:", error)

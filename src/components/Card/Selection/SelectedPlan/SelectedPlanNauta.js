@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardSelectedNauta from '../CardSelected/CardSelectedNauta';
 
-export const SelectedPlanNauta = ({data}) => {
+export const SelectedPlanNauta = ({data, datacomp}) => {
     console.log('SelectedPlan', data)
+    console.log('datacomp', datacomp)
 
     return(
         <div >
@@ -16,6 +17,8 @@ export const SelectedPlanNauta = ({data}) => {
                                 index={index}
                                 name={item.name}
                                 price={item.plans[0].phases[0].prices[0].value}
+                                data={data}
+                                datacomp={datacomp}
                             />
                         
                     </div>
