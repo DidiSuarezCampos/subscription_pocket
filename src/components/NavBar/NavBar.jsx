@@ -40,7 +40,7 @@ function Navbar() {
             Método de Pago
           </a>
           
-          <a onClick={handleClick} href="https://drive.google.com/drive/folders/15_W4qHR2VUwL2nLJfei7417aYwtX29kB?usp=sharing">Manual de Usiario</a>
+          <a onClick={handleClick} href="https://drive.google.com/drive/folders/15_W4qHR2VUwL2nLJfei7417aYwtX29kB?usp=sharing">Manual de Usuario</a>
             <a onClick={handleClick} href="/login">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                     <path 
