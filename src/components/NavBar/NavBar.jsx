@@ -30,9 +30,7 @@ function Navbar() {
   return (
     <>
       <NavContainer>
-        <h2>subs
-            <span>Pocket</span>
-        </h2>
+        
         <div className={`links ${clicked ? 'active' : ''}`}>
           <a onClick={handleClick} href="/home">Inicio</a>
           <a onClick={handleClick} href="/services">
