@@ -79,6 +79,7 @@ export const Login = (props) => {
 
     if (redirectToHome) {
         return <Redirect to="/home" />;
+        windows.location.reload();
     }
 
     return (
